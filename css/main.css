@@ -491,7 +491,7 @@ a {
 
 .swiperNavigationBtn {
   width: 100px;
-  background-color: #BE815F;
+  background-color: var(--colorTwo);
   border: none;
   cursor: pointer;
   padding: 5px;
