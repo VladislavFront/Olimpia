@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ОЛИМПиЯ || Студия Перманентного Макияжа</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Marck+Script&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="stylesheet" href="../css/adaptive/adaptiveIndex.css">
+
+</head>
+<body class="body">
+
+  <div class="quiz-container hidden">
+    <div class="quiz hidden">
+
+      <div class="quiz__quest questOne visible">
+        <h2 class="quiz__title">Определились с зоной нанесения? (можно выбрать несколько)</h2>
+        <div class="quiz__answer-container answer-container-one">
+
+          <div class="quiz__answer">
+            <img src="../img/quiz/answer1.webp" alt="Губы" class="quiz__answer-img answer-one" width="250px" height="250px">
+            <button class="quiz__answer-btn btn" onclick="activeAnswerOne()"><h3 class="quiz__answer-title answer-title-img">Губы</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <img src="../img/quiz/answer2.webp" alt="Брови" class="quiz__answer-img answer-two" width="250px" height="250px">
+            <button class="quiz__answer-btn btn" onclick="activeAnswerTwo()"><h3 class="quiz__answer-title answer-title-img">Брови</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <img src="../img/quiz/answer3.webp" alt="Межресничка" class="quiz__answer-img answer-three" width="250px" height="250px">
+            <button class="quiz__answer-btn btn" onclick="activeAnswerThree()"><h3 class="quiz__answer-title answer-title-img">Межресничка</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <img src="../img/quiz/answer4.webp" alt="Стрелка" class="quiz__answer-img answer-four" width="250px" height="250px">
+            <button class="quiz__answer-btn btn" onclick="activeAnswerFour()"><h3 class="quiz__answer-title answer-title-img">Стрелка</h3></button>
+          </div>
+        </div>
+        <div class="quiz-next">
+          <button class="quiz-next__btn btn" onclick="openTwoQuest()">Следующий</button>
+        </div>
+      </div>
+
+      <div class="quiz__quest questTwo hidden">
+        <h2 class="quiz__title">Ранее уже делали подобную процедуру?</h2>
+        <div class="quiz__answer-container">
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn yesBtn btn" onclick="openThreeQuest()"><h3 class="quiz__answer-title">Да</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn noBtn btn" onclick="openThreeQuest()"><h3 class="quiz__answer-title">Нет</h3></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz__quest questThree hidden">
+        <h2 class="quiz__title">Необходимо ли удаление или перекрытие старого перманентного макияжа?</h2>
+        <div class="quiz__answer-container">
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn yesBtn btn" onclick="openFourQuest()"><h3 class="quiz__answer-title">Да</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn noBtn btn" onclick="openFourQuest()"><h3 class="quiz__answer-title">Нет</h3></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz__quest questFour hidden">
+        <h2 class="quiz__title">Вы определились с желаемой формой и цветом?</h2>
+        <div class="quiz__answer-container">
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn yesBtn btn" onclick="openFiveQuest()"><h3 class="quiz__answer-title">Да</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn noBtn btn" onclick="openFiveQuest()"><h3 class="quiz__answer-title">Нет</h3></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="quiz__quest questFive hidden">
+        <h2 class="quiz__title">Имеется ли шрам в выбранной Вами зоне перманентного макияжа?</h2>
+        <div class="quiz__answer-container">
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn yesBtn btn" onclick="openSixQuest()"><h3 class="quiz__answer-title">Да</h3></button>
+          </div>
+
+          <div class="quiz__answer">
+            <button class="quiz__answer-btn noBtn btn" onclick="openSixQuest()"><h3 class="quiz__answer-title">Нет</h3></button>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="quiz__quest questSix hidden">
+        <h2 class="quiz__title">Отлично! Оставьте свои данные и мы с Вами свяжемся!</h2>
+        <div class="quiz-form-container">
+
+          <form action="" class="quiz-form" id="form-quiz">
+            <input type="tel" id="phone" name="phone" placeholder="Введите свой номер телефона" class="quiz-form__input input" required>
+            <input type="text" id="name" name="name" placeholder="Введите свое имя" class="quiz-form__input input" required>
+            <button class="quiz-form__submit submit" type="submit" onclick="closeQuiz()">Отправить</button>
+          </form>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="burger-menu menu-closed">
+    <div class="burger-menu__closed-button" onclick="closedBurgerMenu()"></div>
+    <nav class="burger-menu__nav">
+      <ul class="burger-menu__nav-list">
+        <li><a href="#portfolio" class="burger-menu__nav-item" onclick="navItem()">Портфолио</a></li>
+        <li><a href="#spec" class="burger-menu__nav-item" onclick="navItem()">Спецпредложения</a></li>
+        <li><a href="#price" class="burger-menu__nav-item" onclick="navItem()">Услуги и цены</a></li>
+      </ul>
+    </nav>
+  </div>
+  
+  <header class="header">
+    <div class="burger-button" onclick="openBurgerMenu()">
+      <span class="burger-button__span"></span>
+    </div>
+    <nav class="nav">
+      <ul class="nav-list">
+        <li class="nav-list-item"><a href="#portfolio" class="nav-list-item__link">Портфолио</a></li>
+        <li class="nav-list-item"><a href="#spec" class="nav-list-item__link">Спецпредложения</a></li>
+        <li class="nav-list-item"><a href="#price" class="nav-list-item__link">Услуги и цены</a></li>
+      </ul>
+    </nav>
+    <div class="contact-header-container">
+      <div class="phone-container"><a href="tel:+79045201057" target="blank" class="phone phone-header">+79045201057</a></div>
+      <div class="btn-container"><a href="#contact" class="btn consultation-button">Записаться на консультацию</a> </div>
+      <div class="logo">Перманент-Студия ОЛИМПиЯ</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <main class="main">
+
+      <section class="section home-section">
+        <div class="img-container">
+          <img src="../img/home/hero.png" alt="Девушка" class="home-img" width="500px">
+        </div>
+        <div class="home-info-container">
+          <h1 class="section-title home-title">Перманентный макияж в <div class="empty"></div> Сочи</h1>
+          <p class="home-info"> Пройдите тест и получите скидку 1000 рублей на первую процедуру</p>
+          <ul class="info-list">
+            <li class="info__item">✔ Стойкий результат до 2-х лет благодаря качественному оборудованию и пигментам</li>
+            <li class="info__item">✔ Бесплатная консультация c дизайн-примеркой</li>
+            <li class="info__item">✔ Гарантийная доработка ПМ без оплаты</li>
+          </ul>
+          <div class="home-btn-container"><button class="btn btn-test-home" onclick="openQuiz()">Пройти тест</button></div>
+        </div>
+      </section>
+  
+      <section class="section portfolio-section">
+        <h2 class="section-title portfolio-title">Мои работы</h2>
+        <p class="sub-title sub-portfolio-title">Со мной более 2000 девушек подчеркнули свою природную красоту и больше не тратят время на нанесение косметики, оставаясь привлекательными в любых условиях, и днем, и ночью. А еще ко мне часто обращаются с просьбой исправить чужую работу.</p>
+        <div class="portfolio" id="portfolio">
+          <div class="swiper portfolioSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo1.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo2.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo3.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo4.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo5.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo6.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo7.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo8.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo9.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo10.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo11.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo12.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo13.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo14.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo15.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo16.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo17.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo18.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo19.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-portfolio"><img src="../img/portfolio/photo20.jpg" alt="фотография работы" class="swiper-slide__img" width="450px" height="600px"></div>
+            </div>
+          </div>
+          <div class="navigation-swiper-container">
+            <button class="portfolioSwiperPrev swiperNavigationBtn"><img src="../img/portfolio/btn.png" alt="кнока предыдущий слайд" class="swiperPrevtImg"></button>
+            <button class="portfolioSwiperNext swiperNavigationBtn"><img src="../img/portfolio/btn.png" alt="кнока следующий слайд" class="swiperNextImg"></button>
+          </div>
+        </div>
+      </section>
+  
+      <section class="section hero-section">
+        <div class="card-info">
+          Давайте знакомиться!🤗Я - Ольга Воякина- основатель и Топ-Мастер перманет- студии ОЛИМПиЯ, также я - обучающий тренер-эксперт по ПМ🎓 <br>
+          Сама имею красный диплом Государственного образца! Провела более 6000 процедур за 4 года! Постоянно повышаю квалификацию у топовых зарубежных мастеров.
+          <br>
+          <br>
+          🏆Меня приглашают представлять Сочи на форумах и чемпионатах ПМ, имею награды. <br>
+          🎗Состою в благотворительном фонде помощи женщинам после мастэктомии (провожу бесплатные процедуры по восстановлению ареол молочных желез)
+          <br>
+          <br>
+          ✌наслаждаюсь своей профессией и делаю счастливыми Вас. 
+          За два года вышла из новичка - в ТОПы!
+          <br>
+          <br>
+          Добавляю 25-ый час в сутки. <br>
+          Дарю 10 лет молодости.
+        </div>
+        <div class="card-img"><img src="../img/hero/hero.jpg" alt="Фото владельца" class="card-img__hero" width="500px" height="850px"></div>
+      </section>
+
+      <section class="section medic-section">
+        <h2 class="section-title">Медицинский татуаж</h2>
+        <p class="sub-title">Помимо прекрасного перманентного макияжа я предлагаю такие услуги как:</p>
+        <div class="medic-content-container">
+          <div class="text-info">
+            ✔ Камуфляж/маскировка шрамов, растяжек, витилиго, синяков под глазами, сосудистых звёздочек <br>
+            ✔ Окрашивание/восстановление ареол молочных желез <br>
+            ✔ Трихопигментация <br>
+            ✔ Коллагенотерапия (шлифовка шрамов, растяжек, постакне) <br>
+            ✔ Удаление пигментных пятен <br>
+            ✔ удаление старого/некачественного татуажа <br>
+          </div>
+          <h2 class="section-title">Примеры работ</h2>
+          <div class="swiper medicSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic1.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic2.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic3.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic4.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic5.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic6.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic7.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic8.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic9.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic10.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic11.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic12.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic13.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic14.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic15.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic16.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic17.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic18.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic19.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic20.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+              <div class="swiper-slide swiper-slide-medic"><img src="../img/medic/medic21.jpg" alt="фотография работы" class="swiper-slide__img swiper-slide__img-medic" width="500px" height="600px"></div>
+            </div>
+          </div>
+          <div class="navigation-swiper-container">
+            <button class="medicSwiperPrev swiperNavigationBtn"><img src="../img/medic/btn.png" alt="кнока предыдущий слайд" class="swiperPrevtImg"></button>
+            <button class="medicSwiperNext swiperNavigationBtn"><img src="../img/medic/btn.png" alt="кнока следующий слайд" class="swiperNextImg"></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="section studio-section">
+        <h2 class="section-title">Моя студия</h2>
+        <img src="../img/studio/studio.jpg" alt="Фотография студии ПМ" class="studio__img">
+      </section>
+  
+      <section class="section cause-section">
+        <h2 class="section-title">Причины, почему клиенты выбирают меня:</h2>
+        <p class="sub-title">Моя миссия – помогать людям с помощью эстетического перманентного макияжа становиться счастливыми и уверенными в себе!</p>
+        <div class="cause-content-container">
+          <ul class="cause-list">
+            <li class="cause-list__item">
+              Безболезненно
+              <p class="cause-info">Мастерство и качественное оборудование, делают процедуру максимально комфортной и безболезненной.</p>
+            </li>
+  
+            <li class="cause-list__item">
+              Premium качество
+              <p class="cause-info">Для создания идеального результата я выбираю оборудование, иглы и пигменты премиум качества.</p>
+            </li>
+  
+            <li class="cause-list__item">
+              Акции и спецпредложения
+              <p class="cause-info">У меня есть для вас акции и спецпредложения при отправке заявки с сайта, узнайте о них ниже.</p>
+            </li>
+          </ul>
+          <div class="cause-img-container"><img src="../img/cause/cause.webp" alt="Девушке делают брови" class="cause-img-container__img"></div>
+        </div>
+      </section>
+  
+      <section class="section price-section">
+        <div class="gradient-price"></div>
+        <div class="price-content-container">
+          <h2 class="section-title price-title">Узнайте цены на услуги</h2>
+          <p class="sub-title">Введите номер телефона и нажмите "узнать цены"</p>
+          <form action="" class="price-form formPrice" id="form-price">
+            <input type="tel" id="phone" name="phone" placeholder="Введите свой номер телефона" class="price-form__input input" required>
+            <button class="price-form__submit submit" type="submit">Узнать цены</button>
+          </form>
+          <p class="conf">Отправляя свои данные, вы соглашаетесь с <a href="../html/privacyPolicy.html" target="_blank" class="conf__link">политикой конфиденциальности</a></p>
+        </div>
+      </section>
+  
+      <section class="section test-section" id="spec">
+        <div class="gradient-test"></div>
+        <div class="test-content-container">
+          <h2 class="section-title test-title">При прохождении теста – <br> скидка 1000 рублей </h2>
+          <p class="sub-title-test">Пройдите тест за 30 секунд, узнайте стоимость процедуры и получите скидку </p>
+          <button class="btn btn-test-banner" onclick="openQuiz()">Пройти тест</button>
+        </div>
+      </section>
+      
+      <section class="section questions-section">
+        <h2 class="section-title ">Есть вопросы?</h2>
+        <p class="info-text">Позвоните мне: <a href="tel:+79045201057" target="blank" class="phone">+79045201057</a> или напишите в Whatsapp:</p>
+        <a href="https://wa.me/79045201057" target="_blank" class="btn whatsapp-btn">Нажмите на кнопку и начните общение с мастером по Whatsapp</a>
+      </section>
+  
+      <section class="section services-section" id="price">
+        <h2 class="section-title">Мои услуги</h2>
+        <p class="sub-title">Получите специальную цену на перманентный макияж, отправляя заявку с сайта:</p>
+        <div class="card-container">
+          <div class="card">
+            <img src="../img/services/service1.webp" alt="Бровь с открытым глазом" class="card__service-img" width="150px">
+            <h3 class="card__card-title">Перманентный макияж бровей</h3>
+            <p class="card__card-info">Сделаю ваши брови идеально четкими и выразительными</p>
+            <button class="card__test-btn btn" onclick="openQuiz()">Получить спеццену</button>
+          </div>
+          <div class="card">
+            <img src="../img/services/service2.webp" alt="Губы" class="card__service-img" width="150px">
+            <h3 class="card__card-title">Перманентный макияж губ</h3>
+            <p class="card__card-info">Скрою все недостатки, визуально увеличу губы и сделаю их максимально натуральными</p>
+            <button class="card__test-btn btn" onclick="openQuiz()">Получить спеццену</button>
+          </div>
+          <div class="card">
+            <img src="../img/services/service3.webp" alt="Закрытый глаз" class="card__service-img" width="150px">
+            <h3 class="card__card-title">Межресничный перманентный макияж</h3>
+            <p class="card__card-info">Сделаю ваш взгляд более выразительным и проникновенным</p>
+            <button class="card__test-btn btn" onclick="openQuiz()">Получить спеццену</button>
+          </div>
+          <div class="card">
+            <img src="../img/services/service4.webp" alt="Веко" class="card__service-img" width="150px">
+            <h3 class="card__card-title">Перманентный макияж век</h3>
+            <p class="card__card-info">Сделаю ваши глаза визуально больше, а взгляд мягким и выразительным</p>
+            <button class="card__test-btn btn" onclick="openQuiz()">Получить спеццену</button>
+          </div>
+          <div class="card">
+            <img src="../img/services/service5.png" alt="Веко" class="card__service-img" width="150px">
+            <h3 class="card__card-title">медицинский татуаж и остальные услуги</h3>
+            <p class="card__card-info"></p>
+            <button class="card__test-btn btn" onclick="openQuiz()">Получить спеццену</button>
+          </div>
+        </div>
+      </section>
+      
+      <section class="section reviews-section">
+        <h2 class="section-title">Отзывы</h2>
+        <div class="swiper reviewsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews1.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews2.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews3.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews4.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews5.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews6.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews7.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews8.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews9.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews10.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>
+            <div class="swiper-slide swiper-slide-reviews"><img src="../img/reviews/reviews11.jpg" alt="скриншот отзыва с VK" class="swiper-slide__img swiper-slider__img-reviews"></div>            
+           </div>
+          </div>
+          <div class="navigation-swiper-container">
+            <button class="reviewsSwiperPrev swiperNavigationBtn"><img src="../img/medic/btn.png" alt="кнока предыдущий слайд" class="swiperPrevtImg"></button>
+            <button class="reviewsSwiperNext swiperNavigationBtn"><img src="../img/medic/btn.png" alt="кнока следующий слайд" class="swiperNextImg"></button>
+          </div>
+        </div>
+      </section>
+  
+      <section class="section accordion-section">
+        <h2 class="section-title">Самые часто задаваемые вопросы</h2>
+        <div class="accordion">
+          <details class="details" name="faq">
+            <summary class="details__title">Почему мне предложили дешевле?</summary>
+            <div class="details__content">
+              Дешевле делают мастера, которые только начинают свой путь в перманентном макияже. Они вынуждены делать дешевле, чтобы поставить руку и наработать опыт. <br><br> Также мастера, которые экономят на материалах и оборудовании, берут дешевле. <br><br> И самая важная составляющая стоимости услуги - это квалификация мастера. Хороший мастер вкладывает в свое развитие и повышение квалификации много денег, регулярно посещает различные обучения, семинары, вебинары, мк, форумы и т.д. <br><br>
+            </div>
+          </details>
+          <details class="details" name="faq">
+            <summary class="details__title">Больно ли делать перманентный макияж (татуаж)?</summary>
+            <div class="details__content">
+              Если вы боитесь боли, то имейте в виду: саму процедуру вы будете чувствовать. Но, естественно, это не так ощутимо, как знакомый с детства укол в ягодицу или даже прививка.<br><br>– Кожу перед процедурой я обрабатываю обезболивающим кремом, если понадобится использую еще и вторичную анестезию на протяжении всей процедуры, а иголки у меня самые качественные и тоненькие.<br><br>– Клиентки отмечают, что это не больно, а возможный дискомфорт забудется, как только вы взглянете в зеркало и увидите результат.
+            </div>
+          </details>
+          <details class="details" name="faq">
+            <summary class="details__title">Нужно ли будет делать коррекцию?</summary>
+            <div class="details__content">
+              Коррекция обязательна, т.к каждый организм уникален и как ваша кожа отреагирует, заранее никто сказать не может. Задача мастера на основной процедуре - сделать форму, посмотреть, как укладывается пигмент, передается цвет. <br><br> А на коррекции мастер видит, как прижился пигмент, где добавить цвета, где сделать пошире, где приживаемость хуже, и может довести брови до идеала, уже в полной уверенности в результате. <br>
+            </div>
+          </details>
+          <details class="details" name="faq">
+            <summary class="details__title">Сколько длится процедура?</summary>
+            <div class="details__content">
+              Процедура длится примерно 1,5-2 часа.<br>За это время мы успеем провести консультацию, отрисовать эскиз и согласовать его, провести процедуру, дать рекомендации по уходу.<br><br>1. Предварительное обсуждение формы и цвета. 10 мин<br>2. Нанесение анестезии. 15 минут<br>3. Отрисовка эскиза. 5-15 мин<br>4. Выполнение процедуры. 30-50 минут<br>5. Нанесение средств по уходу и рекомендации. 10 минут
+            </div>
+          </details>
+          <details class="details" name="faq">
+            <summary class="details__title">Есть ли противопоказания?</summary>
+            <div class="details__content">
+              Перманентный макияж лучше не делать при кожных заболеваниях, сахарном диабете, гемангиомах, гипертонии, острых воспалительных состояниях, заболеваниях крови, беременности (в первый триместр беременности) и в первые три месяца кормления грудью и в период лактации.<br><br>В любом случае проконсультируйтесь с мастером. Он даст вам развернутый ответ, учитывая ваши индивидуальные особенности.
+            </div>
+          </details>
+        </div>
+      </section>
+      
+      <section class="section consultation-section" id="contact">
+        <div class="consultation-gradient"></div>
+        <div class="consultation-content-container">
+          <h2 class="section-title">Не можете определиться с услугой или у вас есть вопросы?</h2>
+          <p class="sub-title">Оставьте свои контактные данные и мы проконсультируем вас</p>
+          <form action="" class="consultation-form" id="form-consultation">
+            <input type="tel" id="phone" name="phone" placeholder="Введите свой номер телефона" class="consultation-form__input input" required>
+            <input type="text" id="name" name="name" placeholder="Введите свое имя" class="consultation-form__input input" required>
+            <button class="consultation-form__submit submit" type="submit">Получить консультацию</button>
+          </form>
+          <p class="conf">Отправляя свои данные, вы соглашаетесь с <a href="../html/privacyPolicy.html" target="_blank" class="conf__link">политикой конфиденциальности</a></p>
+        </div>
+      </section>
+
+      <section class="section contact-section">
+        <h2 class="section-title contact-title">Контакты</h2>
+        <div class="contact-container">
+          <div class="contact-info">
+            <a href="tel:+79045201057" target="blank" class="phone contact-phone">+79045201057</a>
+            <p class="address">г.Сочи ул. Виноградная 2а</p>
+            <div class="social-container social-contact-container">
+              <a href="https://vk.com/olmipm" target="_blank" class="vk"><img src="../img/contact/vk.png" alt="vk" class="vk__img"></a>
+              <a href="https://wa.me/79045201057" target="_blank" class="whatsapp"><img src="../img/contact/whatsapp.png" alt="whatsapp" class="wa__img"></a>
+            </div>
+          </div>
+          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1c8cd1ea140721f403d80d38a3b250913e0363d57d07085c102ae19af7102818&amp;source=constructor" width="850" height="450" frameborder="0" class="map"></iframe>
+        </div>
+      </section>
+    </main>
+
+    <div class="viget-window">
+      <h2 class="viget-window__title">Бесплатная консультация</h2>
+      <p class="viget-window__sub-title">там, где вам удобно</p>
+      <div class="viget-window__contact-container">
+        <a href="https://t.me/79045201057" target="_blank" class="viget-window__link"><img src="../img/contact/tg.png" alt="tg" class="viget-window__link-img" width="75px"></a>
+        <a href="https://vk.com/olmipm" target="_blank" class="viget-window__link"><img src="../img/contact/vk.png" alt="vk" class="viget-window__link-img" width="75px"></a>
+        <a href="https://wa.me/79045201057" target="_blank" class="viget-window__link"><img src="../img/contact/whatsapp.png" alt="whatsapp" class="viget-window__link-img" width="75px"></a>
+      </div>
+    </div>
+  
+    <button onclick="vigetOpen()" class="viget viget-btn-open"><img src="../img/contact/open.png" alt="кнопка открытия меню контактов" class="viget__img-btn" width="50px"></button>
+    <button onclick="vigetClose()" class="viget viget-btn-close"><img src="../img/contact/close.png" alt="кнопка закрытия меню контактов" class="viget__img-btn" width="50px"></button>
+  </div>
+
+
+  <footer class="footer">
+    <p class="address">г.Сочи ул. Виноградная 2а</p>
+    <p class="conf conf-footer">Отправляя свои данные, вы соглашаетесь с <a href="../html/privacyPolicy.html" target="_blank" class="conf__link">политикой конфиденциальности</a></p>
+    <div class="social-container">
+      <a href="https://vk.com/olmipm" target="_blank" class="vk"><img src="../img/contact/vk.png" alt="vk" class="vk__img"></a>
+      <a href="https://wa.me/79045201057" target="_blank" class="whatsapp"><img src="../img/contact/whatsapp.png" alt="whatsapp" class="wa__img"></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script src="../js/index.js"></script>
+  <script src="../js/quiz.js"></script>
+  <script src="../js/form.js"></script>
+</body>
+</html>
