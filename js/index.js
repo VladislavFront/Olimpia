@@ -1,6 +1,6 @@
 setTimeout(function(){ 
-  document.querySelector(".viget-btn-open").click();
-}, 10000);
+  document.querySelector(".btn-test-home").click();
+}, 25000);
 
 const burgerMenu = document.querySelector('.burger-menu')
 
