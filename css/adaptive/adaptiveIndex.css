@@ -1,0 +1,609 @@
+@media screen and (max-width: 1600px) {
+  
+  .quiz__answer-container {
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .quiz__answer {
+    width: 30%;
+  }
+
+  .quiz__answer-img {
+    width: 100%;
+    height: 150px;
+  }
+
+}
+
+@media screen and (max-width: 1200px) {
+
+  .nav {
+    display: none;
+  }
+
+  .burger-button {
+    display: flex; /* flex - видно, none - не видно */
+  }
+  
+  .quiz-form__input {
+    width: 550px !important;
+    height: 65px !important;
+  }
+  
+  .quiz-form__submit {
+    width: 550px !important;
+    height: 65px !important;
+  }
+
+  .home-section {
+    margin-bottom: 350px;
+  }
+
+  .home-info-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 500px 15px 0px 15px;
+    padding: 25px;
+    background-color: rgba(227, 176, 123, .6);
+    border-radius: var(--radius);
+  }
+
+  .home-title {
+    font-size: 7vw;
+  }
+
+  .home-info {
+    font-size: 3vw;
+  }
+
+  .info-list {
+    font-size: 3vw;
+  }
+
+  .empty {
+    width: 0px;
+  }
+
+  .img-container {
+    width: 100%;
+  }
+
+  .hero-section {
+    flex-direction: column;
+  }
+
+  .card-img__hero {
+    height: auto;
+  }
+
+  .card-info {
+    height: auto;
+    width: 500px;
+    padding: 25px;
+    margin: 15px;
+  }
+
+  .cause-content-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  
+  .cause-list {
+    width: 100%;
+  } 
+
+  .cause-info {
+    font-size: 25px;
+  }
+
+  .cause-img-container {
+    width: 100%;
+  }
+
+  .cause-img-container__img {
+    margin: 0;
+  }
+
+  .swiper-slide {
+    font-size: 25px;
+  }
+
+  .contact-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .contact-info {
+    margin-top: 50px;
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .social-contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .map {
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 1000px) {
+
+  .quiz__answer {
+    width: 37%;
+  }
+  
+  .quiz-form__input {
+    width: 450px !important;
+    height: 75px !important;
+  }
+  
+  .quiz-form__submit {
+    width: 450px !important;
+    height: 75px !important;
+  }
+  
+  
+  .navigation-swiper-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .price-title {
+    width: 400px;
+    margin: 0 auto 0;
+  }
+  
+  .map {
+    width: 650px;
+    height: 350px;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+
+  .contact-title {
+    font-size: 10vw;
+  }
+
+  .swiper-slide {
+    font-size: 20px;
+  }
+
+  .burger-menu.menu-open {
+    width: 100%;
+  }
+
+  .viget-window.open {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  @keyframes openBurgerMenu {
+    from {
+      margin-left: -100%;
+    }
+    to {
+      margin-left: 0%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+
+  .burger-menu__nav-list {
+    font-size: 30px;
+  }
+
+  .quiz {
+    width: 100%;
+    height: 100vh;
+    border: none;
+    border-radius: none;
+    border: none;
+    border-radius: none;
+  }
+
+  .quiz__answer-container {
+    justify-content: center;
+  }
+
+  .quiz__answer {
+    width: 30%;
+  }
+
+  .answer-title-img {
+    font-size: 15px;
+  }
+
+  .portfolio-title {
+    font-size: 7vw;
+  }
+
+  .sub-portfolio-title {
+    font-size: 5vw;
+  }
+
+  .price-form {
+    flex-direction: column;
+  }
+
+  .price-form__input {
+    margin: 0;
+  }
+
+  .price-form__submit {
+    margin: 20px 0 0 0;
+    width: 450px;
+  }
+
+  .test-section {
+    width: 400px;
+    height: 400px;
+  }
+
+  .test-title {
+    width: 350px;
+  }
+
+  .sub-title-test {
+    width: 350px;
+  }
+
+  .info-text {
+    text-align: center;
+  }
+
+  .whatsapp-btn {
+    text-align: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .consultation-form__input {
+    width: 450px;
+  }
+  
+  .consultation-form__submit{
+    width: 450px;
+  }
+
+}
+
+@media screen and (max-width: 680px) {
+
+  .home-title {
+    font-size: 8vw;
+    text-align: center;
+  }
+
+  .home-info {
+    font-size: 4vw;
+  }
+
+  .info-list {
+    font-size: 4vw;
+  }
+
+  /* .swiper-slide-reviews {
+    min-height: 625px;
+  }
+
+  .swiper-slider__img-reviews {
+    height: 100px;
+  } */
+  
+  .map {
+    width: 500px;
+    height: 300px;
+  }
+
+  .footer {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .conf-footer {
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+
+  :root {
+    --headerHeight: 100px;
+  }
+
+  .contact-header-container {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    color: var(--colorTwo);
+  }
+
+  .header {
+    height: var(--headerHeight);
+    position: fixed;
+    top: 0;
+    z-index: 800;
+  }
+
+  .home-section {
+    margin-top: var(--headerHeight);
+  }
+
+  .phone-container {
+    padding: 0;
+  }
+
+  .logo {
+    display: block;
+  }
+
+  /* .phone-header {
+    display: none;
+  } */
+
+  .consultation-button {
+    display: none;
+  }
+  
+  .quiz-form__input {
+    width: 350px !important;
+    height: 55px !important;
+  }
+  
+  .quiz-form__submit {
+    width: 350px !important;
+    height: 55px !important;
+  }
+
+  .portfolio {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(8, 450px);
+  }
+  
+  .navigation-swiper-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .price-section {
+    font-size: 20px;
+  }
+
+  .price-title {
+    width: 250px;
+  }
+
+  .card-info {
+    width: 350px;
+    font-size: 20px;
+  }
+
+  .card-img__hero {
+    width: 350px;
+    height: 750px;
+  }
+
+  .price-form__input {
+    width: 300px;
+  }
+
+  .price-form__submit {
+    margin-top: 20px;
+    width: 300px;
+  }
+
+  .price-content-container {
+    width: 80%;
+    max-height: 600px;
+  }
+
+  .conf {
+    font-size: 20px;
+  }
+
+  .swiper-slide {
+    font-size: 15px;
+  }
+
+  .details__title {
+    font-size: 20px;
+  }
+
+  .details__content {
+    font-size: 20px;
+  }
+
+  .consultation-form__input {
+    width: 280px;
+    font-size: 18px;
+  }
+  
+  .consultation-form__submit{
+    width: 280px;
+    font-size: 18px;
+  }
+
+  .map {
+    width: 400px;
+    height: 250px;
+  }
+
+  .contact-info {
+    margin-top: 50px;
+    font-size: 35px;
+    text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+
+  .answer-title-img {
+    font-size: 12px;
+  }
+
+  .answer-title-consult {
+    width: 100%;
+  }
+
+  .quiz__answer-img {
+    width: 100%;
+    height: 100px;
+  }
+  
+  .quiz-form__input {
+    width: 250px !important;
+    height: 50px !important;
+    font-size: 15px;
+  }
+  
+  .quiz-form__submit {
+    width: 250px !important;
+    height: 50px !important;
+  }
+
+  .btn-test-home {
+    width: 150px;
+    font-size: 18px;
+  }
+
+  .home-info {
+    font-size: 5.5vw;
+  }
+
+  .info-list {
+    font-size: 5.5vw;
+  }
+
+  .portfolio-title {
+    font-size: 10vw;
+  }
+
+  .sub-portfolio-title {
+    font-size: 9vw;
+  }
+
+  .swiper-slide-portfolio {
+    padding: 5px;
+  }
+
+  .card-info {
+    width: 300px;
+  }
+
+  .card-img__hero {
+    width: 300px;
+    height: 500px;
+  }
+
+  .cause-info {
+    font-size: 20px;
+  }
+
+  .price-form__input {
+    width: 250px;
+    font-size: 16px;
+  }
+
+  .price-form__submit {
+    width: 250px;
+  }
+
+  .gradient-test {
+    height: 450px;
+  }
+
+  .test-section {
+    width: 350px;
+    height: 450px;
+  }
+
+  .sub-title-test {
+    width: 300px;
+  }
+
+  .btn-test-banner {
+    width: 280px;
+  }
+
+  .swiper-slide {
+    font-size: 15px;
+  }
+
+  .contact-title {
+    font-size: 12vw;
+  }
+
+  .map {
+    width: 300px;
+    height: 200px;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+
+  .logo {
+    font-size: 15px;
+  }
+  
+  .gradient-test {
+    height: 500px;
+  }
+
+  .test-section {
+    width: 300px;
+    height: 500px;
+  }
+
+  .test-title {
+    width: 280px;
+  }
+
+  .sub-title-test {
+    width: 250px;
+  }
+
+  .btn-test-banner {
+    width: 200px;
+  }
+
+  .card {
+    width: 300px;
+  }
+
+  .swiper-slide__img {
+    height: 240px;
+  }
+
+}
